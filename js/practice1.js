@@ -1,19 +1,20 @@
 $(document).ready(() => {
     const $btnRun = $('#btnRun');
+     const $btnRun2 = $('#btnRun2');
 $btnRun.on('click', () => {
     //var selectedCountry = $("#selCountry :selected").val();
    //var selectedLatitud = $("#selCountry :selected").attr("data-latitud").val();
   // var selectedAltitud = $("#selCountry :selected").attr("data-altitud").val();
   
    $.ajax({
-    url: "php/practice2.php",
+    url: "php/TimeZone.php",
     type: 'POST',
     dataType: 'json',
     data: {
         //latitud: $("#selCountry :selected").attr("data-latitud").val(),
         //altitud: $("#selCountry :selected").attr("data-altitud").val()
-        latitud: $("#selCountry").attr("data-latitud"),
-        altitud: $("#selCountry").attr("data-altitud")
+        latitud: $("#selCountry").find('option:selected').attr("data-latitud"),
+        altitud: $("#selCountry").find('option:selected').attr("data-altitud")
     },
     success: function(result) {
 
@@ -21,8 +22,8 @@ $btnRun.on('click', () => {
 
         if (result.status.name == "ok") {
 
-            $('#sunrise').html(result['data']['sunrise']);
-            $('#sunset').html(result['data']['sunset']);
+            $('#sunrise').html('Sunrise: ' + result['data']['sunrise']);
+            $('#sunset').html('Sunset: '+result['data']['sunset']);
             //$('#txtLanguages').html(result['data'][0]['languages']);
             //$('#txtPopulation').html(result['data'][0]['population']);
             //$('#txtArea').html(result['data'][0]['areaInSqKm']);
@@ -39,45 +40,36 @@ $btnRun.on('click', () => {
 
 
 });
-});
+$btnRun2.on('click', () => {
+ 
+   $.ajax({
+    url: "php/Oceano.php",
+    type: 'POST',
+    dataType: 'json',
+    data: {
+        latitud: $("#latitud").val(),
+        altitud: $("#longitud").val()
+    },
+    success: function(result) {
 
+        console.log(result);
 
-/*$(document).ready(function(){
-$('#btnRun').click(function() {
+        if (result.status.name == "ok") {
 
-    $.ajax({
-        url: "php/practice2.php",
-        type: 'POST',
-        dataType: 'json',
-        data: {
-            latitud: $('#selCountry').val(),
-            altitud: $('#selLanguage').val()
-            //latitud: selectedLatitud,
-           // altitud: selectedAltitud
-        },
-        success: function(result) {
+            $('#sunrise').html('Ocean name: ' + result['data']['name']);
+            
 
-            console.log(result);
+        } 
 
-            if (result.status.name == "ok") {
-
-                $('#sunrise').html(result['data']['sunrise']);
-                $('#sunset').html(result['data']['sunset']);
-                //$('#txtLanguages').html(result['data'][0]['languages']);
-                //$('#txtPopulation').html(result['data'][0]['population']);
-                //$('#txtArea').html(result['data'][0]['areaInSqKm']);
-
-            }
-          
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
         
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            // your error code
-            console.log("no quena");
-        }
-    }); 
+        $('#sunset').html('No hay oceano');
+    }
+}); 
 
 
 });
 });
-*/
+
+

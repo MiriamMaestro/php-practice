@@ -17,22 +17,16 @@
             <th></th>
         </tr>
         <tr>
-            <td>1.Horario de salida y entrada del sol</td>
-            <td>Cuantas islas tienen los diferentes paises
+            <td>Time Zone</td>
+            <td>Show at what time is the sunrise and sunset in differents countries
                 <select id="selCountry">
                     
-                    <option data-latitud="40.2085" data-altitud="-3.71">Francia</option>
-
+                    <option data-latitud="47.01" data-altitud="10.2">Austria</option>
+                    <option data-latitud="30.01" data-altitud="10.2">Libya</option>
                     <option data-latitud="40.2085" data-altitud="-3.71">España</option>
                     <!--<option value="DE">Germany</option>
                     <option value="US">USA</option>-->
                 </select>
-                <select id="selLanguage">
-                    <option value="-3.71">Spain</option>
-                    <option value="2593110">Islas Canarias</option>
-                    <!--<option value="DE">Germany</option>
-                    <option value="US">USA</option>
-                </select>-->
             </td>
             <td>
                 <button id="btnRun">Run</button>
@@ -41,9 +35,20 @@
         </tr>
 
         <tr>
-            <td>2.</td>
-            <td></td>
-            <td><button>hola</button></td>
+            <td>Ocen</td>
+            <td>
+                You can know in which Ocean are you from the altitud and longitud 
+                <p>Latitud
+                <input type="number" name="latitud" id="latitud" min="" max="" step="any">
+                </p>
+                <p>Longitud
+                <input type="number" name="longitud" id="longitud" min="" max="" step="any">
+                </p>
+            </td>
+            <td>
+                <button id="btnRun2">Run</button>
+
+            </td>
         </tr>
         
         <tr>
@@ -54,8 +59,10 @@
         <tr>
             <td colspan="3">
                 <div class="container1">
-                    <p id="sunrise">Sunrise:</p>
-                    <p id="sunset">Sunset:</p>
+                    
+                    <p id="sunrise"></p>
+                    
+                    <p id="sunset"></p>
 
                 </div>
 
