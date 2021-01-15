@@ -63,10 +63,38 @@ $btnRun2.on('click', () => {
 
     },
     error: function(jqXHR, textStatus, errorThrown) {
-        
-        $('#sunset').html('No hay oceano');
+        console.log('No funcion');
+       // $('#sunset').html('No hay oceano');
     }
 }); 
+}); 
+$btnRun3.on('click', () => {
+ 
+    $.ajax({
+     url: "php/Oceano.php",
+     type: 'POST',
+     dataType: 'json',
+     data: {
+         latitud: $("#latitud").val(),
+         altitud: $("#longitud").val()
+     },
+     success: function(result) {
+ 
+         console.log(result);
+ 
+         if (result.status.name == "ok") {
+ 
+             $('#sunrise').html('Street name: ' + result['data']['street']);
+             
+ 
+         } 
+ 
+     },
+     error: function(jqXHR, textStatus, errorThrown) {
+         console.log('No funcion');
+        // $('#sunset').html('No hay oceano');
+     }
+ }); 
 
 
 });
