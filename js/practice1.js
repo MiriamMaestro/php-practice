@@ -1,6 +1,7 @@
 $(document).ready(() => {
     const $btnRun = $('#btnRun');
-     const $btnRun2 = $('#btnRun2');
+    const $btnRun2 = $('#btnRun2');
+    const $btnRun3 = $('#btnRun3');
 $btnRun.on('click', () => {
     //var selectedCountry = $("#selCountry :selected").val();
    //var selectedLatitud = $("#selCountry :selected").attr("data-latitud").val();
@@ -43,7 +44,7 @@ $btnRun.on('click', () => {
 $btnRun2.on('click', () => {
  
    $.ajax({
-    url: "php/Oceano.php",
+    url: "php/TimeZone.php",
     type: 'POST',
     dataType: 'json',
     data: {
@@ -75,8 +76,8 @@ $btnRun3.on('click', () => {
      type: 'POST',
      dataType: 'json',
      data: {
-         latitud: $("#latitud").val(),
-         altitud: $("#longitud").val()
+         word: $("#latitud").val(),
+        
      },
      success: function(result) {
  
