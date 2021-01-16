@@ -44,7 +44,7 @@ $btnRun.on('click', () => {
 $btnRun2.on('click', () => {
  
    $.ajax({
-    url: "php/TimeZone.php",
+    url: "php/Oceano.php",
     type: 'POST',
     dataType: 'json',
     data: {
@@ -68,15 +68,16 @@ $btnRun2.on('click', () => {
        // $('#sunset').html('No hay oceano');
     }
 }); 
-}); 
+});
+
 $btnRun3.on('click', () => {
  
     $.ajax({
-     url: "php/Oceano.php",
+     url: "php/NameStreet.php",
      type: 'POST',
      dataType: 'json',
      data: {
-         word: $("#latitud").val(),
+         word: $("#word").val(),
         
      },
      success: function(result) {
@@ -84,10 +85,11 @@ $btnRun3.on('click', () => {
          console.log(result);
  
          if (result.status.name == "ok") {
- 
-             $('#sunrise').html('Street name: ' + result['data']['street']);
-             
- 
+
+            for (i=0; i<result['data'].length ; i++) {
+
+             $('#sunrise').html('Street name: ' + result['data'][i]['street']);
+            }
          } 
  
      },
