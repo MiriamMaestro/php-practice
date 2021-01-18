@@ -58,7 +58,7 @@ $btnRun2.on('click', () => {
         if (result.status.name == "ok") {
 
             $('#ocean').html('Ocean name: ' + result['data']['name']);
-            $('#sunset').html('');
+            
             
 
         } 
