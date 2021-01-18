@@ -87,8 +87,11 @@ $btnRun3.on('click', () => {
          if (result.status.name == "ok") {
 
             for (i=0; i<result['data'].length ; i++) {
-
-             $('#sunrise').html('Street name: ' + result['data'][i]['street']);
+                var tag = document.createElement("p");
+                var text = document.createTextNode('Street name: ' + result['data'][i]['street']);
+                tag.appendChild(text);
+                var element = document.getElementById("sunrise");
+                element.appendChild(tag);
             }
          } 
  
