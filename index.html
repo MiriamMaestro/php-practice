@@ -9,7 +9,10 @@
     <script type="application/javascript" src="js/practice1.js"></script>
 </head>
 <body>
-    <p>PRACTICA 1</p>
+<div class="header">    
+    <h1>Training 1 - PHP</h1>
+</div>
+<div class="main">
     <table>
         <tr>
             <th>API Name</th>
@@ -24,8 +27,7 @@
                     <option data-latitud="47.01" data-altitud="10.2">Austria</option>
                     <option data-latitud="30.01" data-altitud="10.2">Libya</option>
                     <option data-latitud="40.2085" data-altitud="-3.71">España</option>
-                    <!--<option value="DE">Germany</option>
-                    <option value="US">USA</option>-->
+
                 </select>
             </td>
             <td>
@@ -56,11 +58,12 @@
             <td>Returns a list of US streets which start with the search term
                 <input type="text" name="word" id="word">
             </td>
-            <td><button id="btnRun3">hola</button></td>
+            <td><button id="btnRun3">Run</button></td>
         </tr>
         <tr>
             <td colspan="3">
                 <div class="container1">
+                    <p id="results">Results</p>
                     
                     <p id="sunrise"></p>
                     
@@ -71,7 +74,8 @@
             </td>
         </tr>
     </table>
-    
+</div>
+<div id='preloader'></div>   
 </body>
 
 

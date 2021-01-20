@@ -2,6 +2,12 @@ $(document).ready(() => {
     const $btnRun = $('#btnRun');
     const $btnRun2 = $('#btnRun2');
     const $btnRun3 = $('#btnRun3');
+$(window).on('load', function () {
+    if ($('#preloader').length) {
+    $('#preloader').delay(100).fadeOut('slow', function () {
+    $(this).remove();
+    });
+}})
 $btnRun.on('click', () => {
  
    $.ajax({
