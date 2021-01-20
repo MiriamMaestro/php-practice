@@ -1,7 +1,7 @@
 <?php
 	$executionStartTime = microtime(true) / 1000;
 
-	$url = 'http://api.geonames.org/timezoneJSON?lat=' . $_REQUEST['latitud'] . '&lng='. $_REQUEST['altitud'] . '&username=flightltd';
+	$url = 'http://api.geonames.org/timezoneJSON?lat=' . $_REQUEST['latitud'] . '&lng='. $_REQUEST['altitud'] . '&username=yosoymairim';
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);

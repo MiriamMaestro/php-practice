@@ -36,7 +36,7 @@ $btnRun.on('click', () => {
     }
 }); 
 
-$('.container').toggleClass('hide');
+
 
 });
 $btnRun2.on('click', () => {

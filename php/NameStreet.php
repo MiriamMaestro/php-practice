@@ -1,7 +1,7 @@
 <?php
 	$executionStartTime = microtime(true) / 1000;
 
-	$url = 'http://api.geonames.org/streetNameLookupJSON?q=' . $_REQUEST['word'] . '&country=US&username=flightltd';
+	$url = 'http://api.geonames.org/streetNameLookupJSON?q=' . $_REQUEST['word'] . '&country=US&username=yosoymairim';
 
 
 	$ch = curl_init();
